@@ -1,6 +1,6 @@
 /* 209 Briarwood Ave — deal data. Every view on the page renders from this file; update it and push to refresh the tracker. */
 window.DEAL = {
-  updated: "2026-10-29T16:30:00-04:00",
+  updated: "2026-10-29T17:30:00-04:00",
   property: {
     address: "209 Briarwood Avenue",
     town: "Haddon Township, NJ",
@@ -23,7 +23,7 @@ window.DEAL = {
 
   stages: [
     { name: "Under contract", pct: 100 },
-    { name: "Attorney review", pct: 45, now: true },
+    { name: "Attorney review", pct: 70, now: true },
     { name: "Inspections", pct: 25 },
     { name: "Mortgage", pct: 60 },
     { name: "Closing", pct: 0 }
@@ -39,7 +39,7 @@ window.DEAL = {
     { phase: "Attorney review", items: [
       { t: "Buyer's attorney engaged", d: "Wed Oct 28", s: "done", n: "Jeffrey P. Barnes, KingBarnes LLC." },
       { t: "Attorney review period ends", d: "Fri Oct 30 · 11:59 PM", due: "attorney", s: "now", tags: ["Attorneys"] },
-      { t: "Desert Dry warranty addendum", d: "buyers signed Oct 28", s: "now", n: "Seller signatures to follow.", tags: ["Sellers", "Jamie"] }
+      { t: "Desert Dry warranty addendum", d: "Wed Oct 28", s: "done", n: "Signed by buyers and sellers. Fully signed copy received Oct 29." }
     ]},
     { phase: "Inspections", items: [
       { t: "Inspections booked", d: "Tue Oct 27", s: "done", n: "Jaybird: home inspection, radon and termite." },
@@ -66,7 +66,7 @@ window.DEAL = {
   documents: [
     { f: "01 Contract & Addenda", t: "Contract of Sale (NJ REALTORS Form 118)", s: "signed", d: "2026-10-27", from: "Jamie Quinn", n: "Fully executed" },
     { f: "01 Contract & Addenda", t: "Buyer agency agreement", s: "signed", d: "2026-10-28", from: "Authentisign" },
-    { f: "01 Contract & Addenda", t: "Desert Dry warranty addendum", s: "waiting", d: "2026-10-28", from: "Sellers", n: "Buyers signed Oct 28; seller signatures pending" },
+    { f: "01 Contract & Addenda", t: "Desert Dry warranty addendum", s: "signed", d: "2026-10-28", from: "Thomas Rafferty", n: "Fully signed; copy received Oct 29" },
     { f: "02 Seller Disclosures", t: "Seller's property disclosure", s: "received", d: "2026-10-25", from: "Listing file" },
     { f: "02 Seller Disclosures", t: "Disclosure part 2: drainage work", s: "received", d: "2026-10-25", from: "Listing file" },
     { f: "02 Seller Disclosures", t: "Lead-based paint disclosure", s: "received", d: "2026-10-25", from: "Listing file" },
@@ -96,10 +96,7 @@ window.DEAL = {
   loops: [
     { id: "spire-deposit", who: "Rachel Rau · Spire Abstract", email: "rachel@spireabstract.com", what: "Confirm the $15,000 deposit arrived", since: "2026-10-29T11:41:00-04:00", auto: true,
       subject: "Re: 209 Briarwood Avenue",
-      draft: "Hi Rachel,\n\nFollowing up on the $15,000 earnest money deposit for 209 Briarwood Avenue, paid through your online portal on Oct 29. Could you confirm it was received?\n\nThank you,\nHursh Patel" },
-    { id: "addendum", who: "Jamie Quinn · for the sellers", email: "jamie@unlockedteam.com", what: "Seller-signed Desert Dry addendum", since: "2026-10-29T15:47:00-04:00", auto: false,
-      subject: "Re: 209 Briarwood – status update",
-      draft: "Hi Jamie,\n\nChecking in on the seller-signed copy of the Desert Dry warranty addendum. Could you send it over when you have it?\n\nThank you,\nHursh" }
+      draft: "Hi Rachel,\n\nFollowing up on the $15,000 earnest money deposit for 209 Briarwood Avenue, paid through your online portal on Oct 29. Could you confirm it was received?\n\nThank you,\nHursh Patel" }
   ],
   onUs: [
     { what: "Credit inquiry letter to NFM", who: "Nisha", when: "this week" },
@@ -126,7 +123,9 @@ window.DEAL = {
     { d: "2026-10-29", ch: "email", who: "Rachel Rau · Spire Abstract", party: "Title", dir: "out", t: "Earnest money paid", n: "Confirmation sent with Thomas and Jamie copied. Waiting on Spire's receipt.", open: "spire-deposit" },
     { d: "2026-10-29", ch: "email", who: "Jenna Surloff · NFM", party: "Lender", dir: "both", t: "Verification update", n: "Bank accounts linked; Ron and Jenna confirmed next steps." },
     { d: "2026-10-29", ch: "text", who: "Jamie Quinn", party: "Jamie", dir: "in", t: "Inspection access", n: "Jamie or her agent will provide access on Nov 6." },
-    { d: "2026-10-29", ch: "email", who: "Jamie Quinn", party: "Jamie", dir: "out", t: "Status update", n: "Asked for the seller-signed Desert Dry addendum.", open: "addendum" }
+    { d: "2026-10-29", ch: "text", who: "Jamie Quinn", party: "Jamie", dir: "both", t: "Status update", n: "Mortgage, inspection, deposit and insurance status shared; asked for the seller-signed Desert Dry addendum." },
+    { d: "2026-10-29", ch: "email", who: "Rachel Rau · Spire Abstract", party: "Title", dir: "out", t: "Lender details", n: "NFM Lending set as the lender of record." },
+    { d: "2026-10-29", ch: "email", who: "Thomas Rafferty", party: "Jamie", dir: "in", t: "Desert Dry addendum, fully signed", n: "Seller-signed copy received and filed." }
   ],
 
   move: {
